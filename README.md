@@ -7,7 +7,7 @@ Running the script using this command "bro -C -r trace.pcap pcap-dissector.bro" 
 ==========================================================
 Bytes Downloaded > {1000000 Bytes / 1 MB}
 ==========================================================
-Format: Size, Client IP, Server IP, Server Port
+Format: size (Descending), client IP, server IP, server port
 
     5243355          x.x.x.x   <-------  x.x.x.x  : 80/tcp
     2867458          x.x.x.x   <-------  x.x.x.x  : 443/tcp
@@ -18,7 +18,7 @@ Format: Size, Client IP, Server IP, Server Port
 ==========================================================
 Bytes Uploaded > {1000000 Bytes / 1 MB}
 ==========================================================
-Format: Size, Client IP, Server IP, Server Port
+Format: size (Descending), client IP, server IP, server port
  
 	2231614               x.x.x.x      -------> x.x.x.x  : 1521/tcp
 	2018871               x.x.x.x      -------> x.x.x.x  : 524/tcp
@@ -31,7 +31,7 @@ Format: Size, Client IP, Server IP, Server Port
 ==========================================================
 Conn Duration > {300 Second / 5 Minutes}
 ==========================================================
- Format: Duration in seconds, Client IP, Server IP, Server Port
+Format: duration in seconds (Descending) , client IP, server IP, server port
 
 		631                   x.x.x.x   <------->     x.x.x.x   : 443/tcp
 		506                   x.x.x.x   <------->     x.x.x.x   : 443/tcp
@@ -43,7 +43,7 @@ Conn Duration > {300 Second / 5 Minutes}
 ==========================================================
 Conn Listening_TCP_Ports_on_Private_IPs
 ==========================================================
-Format: # of sessions, tcp port, server IP, protocol
+Format: # of sessions (Ascending), tcp port, server IP, protocol
 
 	1             80/tcp    listening on  x.x.x.x         http
  
@@ -52,7 +52,7 @@ Format: # of sessions, tcp port, server IP, protocol
 ==========================================================
 Conn Listening_TCP_Ports_on_Public_IPs
 ==========================================================
-Format: # of sessions, tcp port, server IP , protocol 
+Format: # of sessions (Ascending), tcp port, protocol 
 
 	2             443/tcp   -------> -
 	5             443/tcp   -------> ssl
@@ -62,6 +62,7 @@ Format: # of sessions, tcp port, server IP , protocol
 ==========================================================
 HTTP Odd_Hosts
 ==========================================================
+Format: # of occurence (Ascending), HTTP host header value
 
 	1             whos.amung.us
 	1             widgets.amung.us
@@ -82,6 +83,7 @@ HTTP Odd_Hosts
 ==========================================================
 HTTP Odd_URIs
 ==========================================================
+Format: # of occurence (Ascending), odd part of URI (20 chars before and after the matched pattern)
 
 	1             an =    Iniciar{133}  Downlaod                                         x.x.x.x       ------->  www.devyatinskiy.ru
 	1             )|utmcmd=organic|                                                      x.x.x.x       ------->  www.google-analytics.com
@@ -116,6 +118,7 @@ HTTP Odd_URIs
 ==========================================================
 HTTP Referrers
 ==========================================================
+Format: # of occurence (Ascending), TLD part of HTTP referrer header
 
 	1             www.google.com.au
 	2             uacltr.securetopc.top
@@ -130,7 +133,8 @@ HTTP Referrers
 ==========================================================
 HTTP User-Agents
 ==========================================================
- 
+Format: # of occuernce (Ascending), HTTP user-agent header
+
 	1             -
 	1             Microsoft NCSI
 	2             Microsoft-CryptoAPI/6.1
@@ -140,6 +144,7 @@ HTTP User-Agents
 ==========================================================
 HTTP Methods
 ==========================================================
+Format: # of occurence (Ascending), HTTP method header 
  
 	9             POST
 	274           GET
@@ -147,6 +152,7 @@ HTTP Methods
 ==========================================================
 HTTP Response_Codes
 ==========================================================
+Format: # of occurence (Ascending), HTTP status code header value 
 
 	1             307
 	2             403
@@ -159,6 +165,7 @@ HTTP Response_Codes
 ==========================================================
 HTTP Client_Requests
 ==========================================================
+ Format: # of HTTP requests (Ascending), client IP
  
 	63            x.x.x.x
 	136           x.x.x.x
@@ -167,7 +174,8 @@ HTTP Client_Requests
 ==========================================================
 DNS NXDOMAIN_Queries
 ==========================================================
- 
+Format: # of queries to NX domains (Ascending), client IP
+
 	2             x.x.x.x
 	3             x.x.x.x
 	21            x.x.x.x
@@ -175,7 +183,8 @@ DNS NXDOMAIN_Queries
  ==========================================================
 DNS Client_Queries
 ==========================================================
- 
+Format: # of DNS queries (Ascending), client IP
+
 	23            192.168.122.52
 	32            192.168.122.130
 	32            192.168.122.132
@@ -183,7 +192,8 @@ DNS Client_Queries
 ==========================================================
 DNS Query_Types
 ==========================================================
- 
+Format: # of occurence (Ascending), DNS query type
+
 	1             TXT
 	2             AAAA
 	4             PTR
@@ -193,7 +203,8 @@ DNS Query_Types
 ==========================================================
 DNS Odd_Queries
 ==========================================================
- 
+Format: # of occurence (Ascending), odd DNS query
+
 	1             zt.1rx.io
 	1             sync.1rx.io
 	1             ccjlwb22w6c22p2k.onion.to
@@ -224,6 +235,7 @@ DNS Odd_Queries
 ==========================================================
 SMB2 Sessions
 ==========================================================
+Format: # of sessions (Ascending), client IP, server IP, server port
 
  	494           x.x.x.x    -------> x.x.x.x     :  445/tcp
 	532           x.x.x.x    -------> x.x.x.x     :  445/tcp
@@ -231,21 +243,24 @@ SMB2 Sessions
 ==========================================================
 SMB2 Usernames
 ==========================================================
- 
+Format: # of occurence (Ascending), domain\username
+
 	21            Domain            \          Username1
 	494           Domain            \          Username2
  
 ==========================================================
 SMB2 Hostnames
 ==========================================================
- 
+Format: # of occurence (Ascending), SMB hostname
+
  	21            ServerABC
 	494           ServerXYZ
  
 ==========================================================
 SMB2 File_Actions
 ==========================================================
- 
+Format: # of occurence (Ascending), file action
+
 	2             SMB::FILE_WRITE
 	52            SMB::FILE_READ
 	188           SMB::FILE_CLOSE
@@ -254,7 +269,8 @@ SMB2 File_Actions
 ==========================================================
 SMB2 File_Names
 ==========================================================
- 
+Format: # of occurence (Ascending), SMB file name
+
 	1             ui\SwDRM.dll
 	1             desktop.ini
 	1             inetpub\wwwroot\iis-85.png:Zone.Identifier
@@ -282,13 +298,15 @@ SMB2 File_Names
 ==========================================================
 SSH Sessions
 ==========================================================
- 
+Format: # of occurence (Ascending), client ip, server ip, server port
+
 	6             x.x.x.x    -------> y.y.y.y    : 22/tcp
 	2             x.x.x.x    -------> y.y.y.y    : 2222/tcp	
 ==========================================================
 SSH Client_Strings
 ==========================================================
- 
+Format: # of occurence (Ascending), SSH client string
+
 	6             SSH-2.0-PUTTY
  
  
@@ -296,21 +314,24 @@ SSH Client_Strings
 ==========================================================
 SSH Server_Strings
 ==========================================================
- 
+Format: # of occurence (Ascending), SSH server string
+
 	6             SSH-2.0-OpenSSH_7.1p2 Debian-1
 
  
 ==========================================================
 SSH Auth_Success
 ==========================================================
- 
+Format: # of occurence (Ascending), SSH auth_success result (True/False)
+
 	5             F
 	7             T
 
 ==========================================================
 SSL Servers_Names
 ==========================================================
- 
+Format: # of occurence (Ascending), SSL server name
+
 	1             nexusrules.officeapps.live.com
 	1             licensing.mp.microsoft.com
 	1             sqm.telemetry.microsoft.com
@@ -322,6 +343,7 @@ SSL Servers_Names
 ==========================================================
 SSL Issuers
 ==========================================================
+Format: # of occurence (Ascending), SSL issuer
  
 	1             emailAddress=sampo@iki.fi,CN=brutus.neuronio.pt,OU=Desenvolvimento,O=Neuronio\, Lda.,L=Lisboa,ST=Queensland,C=PT
 	2             CN=4Tw88SdvHNKgZH3boHtKG4HL,O=Q31367JVj8IhD4FmHMwKPhUV,L=PVji8090PTSZMEYq0XlXrYzn,ST=ST,C=CN
@@ -331,25 +353,13 @@ SSL Issuers
 	33            CN=Microsoft IT SSL SHA2,OU=Microsoft IT,O=Microsoft Corporation,L=Redmond,ST=Washington,C=US
 	56            CN=Google Internet Authority G2,O=Google Inc,C=US 
 
-==========================================================
-SSL Servers_Names
-==========================================================
- 
-	1             www.youtube.com
-	2             s-static.ak.facebook.com
-	2             maps.google.com
-	2             r1---sn-aigllnek.c.2mdn.net
-	2             googleads4.g.doubleclick.net
-	2             dt.adsafeprotected.com
-	2             s.ytimg.com
-	2             gcdn.2mdn.net
-	2             stats.g.doubleclick.net
-	2             stags.bluekai.com
+
 
 ==========================================================
 SSL Validation_Status
 ==========================================================
- 
+Format: # of occurence (Ascending), SSL cert validation result
+
 	15            ok
 	16            self signed certificate
  
@@ -357,7 +367,8 @@ SSL Validation_Status
 ==========================================================
 RDP Sessions
 ==========================================================
- 
+Format: # of sessions (Ascending), client IP, server IP, server port 
+
 	2             x.x.x.x    -------> y.y.y.y     : 3389/tcp
 	5             x.x.x.x    -------> y.y.y.y     : 3389/tcp
 	15            x.x.x.x    -------> y.y.y.y     : 3389/tcp
@@ -365,7 +376,8 @@ RDP Sessions
 ==========================================================
 RDP Usernames
 ==========================================================
- 
+Format: # of occurence (Ascending), domain \ username
+
 	2             Domain\Username
 	20            Domain\Username
 
@@ -373,7 +385,8 @@ RDP Usernames
 ==========================================================
 IRC session
 ==========================================================
- 
+Format: # of occurence (Ascending), client IP, server IP, server port
+
 	3             10.240.0.3       -------> 10.240.0.2       : 31337/tcp
 	3             10.240.0.4       -------> 10.240.0.2       : 31337/tcp
 	3             10.240.0.5       -------> 10.240.0.2       : 31337/tcp
@@ -382,13 +395,15 @@ IRC session
 ==========================================================
 IRC username
 ==========================================================
- 
+Format: # of occurence (Ascending), IRC username
+
 	9             root-poppopret
  
 
 ==========================================================
 IRC nick
 ==========================================================
+Format: # of occurence (Ascending), IRC nickname
 
 	3             Matir
 	3             andrewg
@@ -398,38 +413,44 @@ IRC nick
 ==========================================================
 FTP Sessions
 ==========================================================
- 
+Format: # of occurence (Ascending), client IP, Server IP, server port
+
 	4             x.x.x.x    -------> y.y.y.y    : 21/tcp
 
 ==========================================================
 FTP Usernames
 ==========================================================
- 
+Format: # of occurence (Ascending), FTP username
+
 	4             admin
 
 ==========================================================
 FTP Passwords
 ==========================================================
- 
+Format: # of occurence (Ascending), FTP passwords
+
 	4             <hidden>
  
 ==========================================================
 FTP Current_Working_Directories
 ==========================================================
- 
+Format: # of occurence (Ascending), FTP Current Working Directory
+
 	1             /home
 	3             .
 
 ==========================================================
 FTP Commands
 ==========================================================
- 
+Format: # of occurence (Ascending), FTP command
+
 	4             PORT
 
 ==========================================================
 File MIME_Types
 ==========================================================
- 
+Format: # of occurence (Ascending), mime type, communication protocol
+
 	1             application/x-dosexec                    -------> FTP_DATA
 	1             image/x-icon                             -------> HTTP
 	2             application/x-shockwave-flash            -------> HTTP
