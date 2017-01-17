@@ -52,7 +52,7 @@ Format: # of sessions, tcp port, server IP, protocol
 ==========================================================
 Conn Listening_TCP_Ports_on_Public_IPs
 ==========================================================
- 
+Format: # of sessions, tcp port, server IP , protocol 
 	2             443/tcp   -------> -
 	5             443/tcp   -------> ssl
 	11            80/tcp    -------> http
