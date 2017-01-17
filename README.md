@@ -302,5 +302,29 @@ SSH Auth_Success
 	5             F
 	7             T
 
+==========================================================
+SSL Servers_Names
+==========================================================
+ 
+	1             nexusrules.officeapps.live.com
+	1             licensing.mp.microsoft.com
+	1             sqm.telemetry.microsoft.com
+	1             iecvlist.microsoft.com
+	1             nexus.officeapps.live.com
+	2             v10.vortex-win.data.microsoft.com
+	4             f5xraa2y2ybtrefz.tor2web.org
+ 
+==========================================================
+SSL Issuers
+==========================================================
+ 
+	1             emailAddress=sampo@iki.fi,CN=brutus.neuronio.pt,OU=Desenvolvimento,O=Neuronio\, Lda.,L=Lisboa,ST=Queensland,C=PT
+	2             CN=4Tw88SdvHNKgZH3boHtKG4HL,O=Q31367JVj8IhD4FmHMwKPhUV,L=PVji8090PTSZMEYq0XlXrYzn,ST=ST,C=CN
+	8             CN=Verizon Akamai SureServer CA G14-SHA2,OU=Cybertrust,O=Verizon Enterprise Solutions,L=Amsterdam,C=NL
+	14            CN=COMODO RSA Domain Validation Secure Server CA,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB
+	18            CN=457jPxEfw8rSShbih3y7p6D3,O=E3LrXvD3rrL8AjBQ9HpYhfAK,L=MdoCgaSQxzrPq5p367Y1Ksjo,ST=ST,C=CN
+	33            CN=Microsoft IT SSL SHA2,OU=Microsoft IT,O=Microsoft Corporation,L=Redmond,ST=Washington,C=US
+	56            CN=Google Internet Authority G2,O=Google Inc,C=US 
+
   
 
