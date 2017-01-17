@@ -118,7 +118,7 @@ Format: # of occurence (Ascending), odd URIs (20 chars before and after the matc
 ==========================================================
 HTTP Referrers
 ==========================================================
-Format: # of occurence (Ascending), TLD part of HTTP referrer header
+Format: # of occurence (Ascending), TLD part of HTTP referrer
 
 	1             www.google.com.au
 	2             uacltr.securetopc.top
@@ -133,7 +133,7 @@ Format: # of occurence (Ascending), TLD part of HTTP referrer header
 ==========================================================
 HTTP User-Agents
 ==========================================================
-Format: # of occuernce (Ascending), HTTP user-agent header
+Format: # of occuernce (Ascending), HTTP user-agent
 
 	1             -
 	1             Microsoft NCSI
@@ -144,7 +144,7 @@ Format: # of occuernce (Ascending), HTTP user-agent header
 ==========================================================
 HTTP Methods
 ==========================================================
-Format: # of occurence (Ascending), HTTP method header 
+Format: # of occurence (Ascending), HTTP request method 
  
 	9             POST
 	274           GET
@@ -152,7 +152,7 @@ Format: # of occurence (Ascending), HTTP method header
 ==========================================================
 HTTP Response_Codes
 ==========================================================
-Format: # of occurence (Ascending), HTTP status code header value 
+Format: # of occurence (Ascending), HTTP response status code 
 
 	1             307
 	2             403
