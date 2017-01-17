@@ -12,18 +12,18 @@ Bytes Downloaded > {1000000 Bytes / 1 MB}
     2867458          x.x.x.x   <-------  x.x.x.x  : 443/tcp
     1136345          x.x.x.x   <-------  x.x.x.x  : 443/tcp
     1070806          x.x.x.x   <-------  x.x.x.x  : 443/tcp
-   	1029117          x.x.x.x   <-------  x.x.x.x  : 80/tcp
+    1029117          x.x.x.x   <-------  x.x.x.x  : 80/tcp
  
 ==========================================================
 Bytes Uploaded > {1000000 Bytes / 1 MB}
 ==========================================================
  
-		2231614               x.x.x.x      -------> x.x.x.x  : 1521/tcp
-		2018871               x.x.x.x      -------> x.x.x.x  : 524/tcp
-		1734451               x.x.x.x      -------> x.x.x.x  : 22/tcp
-		1705043               x.x.x.x      -------> x.x.x.x  : 22/tcp
-		1306928               x.x.x.x      -------> x.x.x.x  : 993/tcp
-		1299905               x.x.x.x      -------> x.x.x.x  : 25/tcp
+	2231614               x.x.x.x      -------> x.x.x.x  : 1521/tcp
+	2018871               x.x.x.x      -------> x.x.x.x  : 524/tcp
+	1734451               x.x.x.x      -------> x.x.x.x  : 22/tcp
+	1705043               x.x.x.x      -------> x.x.x.x  : 22/tcp
+	1306928               x.x.x.x      -------> x.x.x.x  : 993/tcp
+	1299905               x.x.x.x      -------> x.x.x.x  : 25/tcp
 
 
 ==========================================================
@@ -159,7 +159,63 @@ HTTP Client_Requests
 	136           x.x.x.x
 	198           x.x.x.x
 
-
+==========================================================
+DNS NXDOMAIN_Queries
+==========================================================
  
+	2             x.x.x.x
+	3             x.x.x.x
+	21            x.x.x.x
+ 
+ ==========================================================
+DNS Client_Queries
+==========================================================
+ 
+	23            192.168.122.52
+	32            192.168.122.130
+	32            192.168.122.132
+ 
+==========================================================
+DNS Query_Types
+==========================================================
+ 
+	1             TXT
+	2             AAAA
+	4             PTR
+	7             *
+	99            A 
+ 
+==========================================================
+DNS Odd_Queries
+==========================================================
+ 
+	1             zt.1rx.io
+	1             sync.1rx.io
+	1             ccjlwb22w6c22p2k.onion.to
+	1             bapanivato.abjibapanichhatedi.org
+	1             cm.g.doubleclick.net
+	1             x.bidswitch.net
+	1             ubb67.3c147o.u806a4.w07d919.o5f.f1.b80w.r0faf9.e8mfzdgrf7g0.groupprograms.in
+	1             runlove.us
+	1             r03afd2.c3008e.xc07r.b0f.a39.h7f0fa5eu.vb8fbl.e8mfzdgrf7g0.groupprograms.in
+	1             kritischerkonsum.uni-koeln.de
+	1             7oqnsnzwwnm6zb7y.gigapaysun.com
+	1             ip-addr.es
+	1             va872g.g90e1h.b8.642b63u.j985a2.v33e.37.pa269cc.e8mfzdgrf7g0.groupprograms.in
+	1             i.w55c.net
+	1             wme0hsxg.e6to8jdmiysycbmeepm29nfprvigdwev.top
+	1             ffoqr3ug7m726zou.le2brr.bid
+	1             bid.g.doubleclick.net
+	1             um.simpli.fi
+	2             googleads.g.doubleclick.net
+	2             connexity.net
+	2             px.owneriq.net
+	1             stats.g.doubleclick.net
+	1             7c416cff040b7449328d095b3e98e12d5f12a207.googledrive.com
+	1             cl.ly
+	1             connect.facebook.net 
+	2             api.devyatinskiy.ru 
+
+
   
 
