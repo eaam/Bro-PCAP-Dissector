@@ -7,8 +7,8 @@ Running the script using this command "bro -C -r trace.pcap pcap-dissector.bro" 
 ==========================================================
 Bytes Downloaded > {1000000 Bytes / 1 MB}
 ==========================================================
-		Size						Client IP	 					Server IP		Server Port
-		
+#Format: Size, Client IP, Server IP, Server Port
+
     5243355          x.x.x.x   <-------  x.x.x.x  : 80/tcp
     2867458          x.x.x.x   <-------  x.x.x.x  : 443/tcp
     1136345          x.x.x.x   <-------  x.x.x.x  : 443/tcp
