@@ -18,7 +18,7 @@ Bytes Downloaded > {1000000 Bytes / 1 MB}
 ==========================================================
 Bytes Uploaded > {1000000 Bytes / 1 MB}
 ==========================================================
- 		Size								Client IP	 					Server IP		Server Port
+Format: Size, Client IP, Server IP, Server Port
  
 	2231614               x.x.x.x      -------> x.x.x.x  : 1521/tcp
 	2018871               x.x.x.x      -------> x.x.x.x  : 524/tcp
@@ -31,18 +31,20 @@ Bytes Uploaded > {1000000 Bytes / 1 MB}
 ==========================================================
 Conn Duration > {300 Second / 5 Minutes}
 ==========================================================
- 
-	631                   x.x.x.x   <------->     x.x.x.x   : 443/tcp
-	506                   x.x.x.x   <------->     x.x.x.x   : 443/tcp
-	492                   x.x.x.x   <------->     x.x.x.x   : 443/tcp
-	333                   x.x.x.x   <------->     x.x.x.x   : 443/tcp
-	329                   x.x.x.x   <------->     x.x.x.x   : 80/tcp  
- 
+ Format: Duration in seconds, Client IP, Server IP, Server Port
+
+		631                   x.x.x.x   <------->     x.x.x.x   : 443/tcp
+		506                   x.x.x.x   <------->     x.x.x.x   : 443/tcp
+		492                   x.x.x.x   <------->     x.x.x.x   : 443/tcp
+		333                   x.x.x.x   <------->     x.x.x.x   : 443/tcp
+		329                   x.x.x.x   <------->     x.x.x.x   : 80/tcp  
+
  
 ==========================================================
 Conn Listening_TCP_Ports_on_Private_IPs
 ==========================================================
- 
+Format: # of sessions, tcp port, server IP, protocol
+
 	1             80/tcp    listening on  x.x.x.x         http
  
  
