@@ -62,7 +62,7 @@ Format: # of sessions (Ascending), tcp port, protocol
 ==========================================================
 HTTP Odd_Hosts
 ==========================================================
-Format: # of occurence (Ascending), HTTP host header value
+Format: # of occurence (Ascending), odd HTTP hosts
 
 	1             whos.amung.us
 	1             widgets.amung.us
@@ -83,7 +83,7 @@ Format: # of occurence (Ascending), HTTP host header value
 ==========================================================
 HTTP Odd_URIs
 ==========================================================
-Format: # of occurence (Ascending), odd part of URI (20 chars before and after the matched pattern)
+Format: # of occurence (Ascending), odd URIs (20 chars before and after the matched pattern)
 
 	1             an =    Iniciar{133}  Downlaod                                         x.x.x.x       ------->  www.devyatinskiy.ru
 	1             )|utmcmd=organic|                                                      x.x.x.x       ------->  www.google-analytics.com
