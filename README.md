@@ -31,7 +31,7 @@ Format: size (Descending), client IP, server IP, server port
 ==========================================================
 Conn Duration > {300 Second / 5 Minutes}
 ==========================================================
-Format: duration in seconds (Descending) , client IP, server IP, server port
+Format: session duration in seconds (Descending) , client IP, server IP, server port
 
 		631                   x.x.x.x   <------->     x.x.x.x   : 443/tcp
 		506                   x.x.x.x   <------->     x.x.x.x   : 443/tcp
