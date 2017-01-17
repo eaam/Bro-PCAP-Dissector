@@ -216,6 +216,95 @@ DNS Odd_Queries
 	1             connect.facebook.net 
 	2             api.devyatinskiy.ru 
 
+==========================================================
+SMB2 Sessions
+==========================================================
+
+ 	494           x.x.x.x    -------> x.x.x.x     :  445/tcp
+	532           x.x.x.x    -------> x.x.x.x     :  445/tcp
+ 
+==========================================================
+SMB2 Usernames
+==========================================================
+ 
+	21            Domain            \          Username1
+	494           Domain            \          Username2
+ 
+==========================================================
+SMB2 Hostnames
+==========================================================
+ 
+ 	21            ServerABC
+	494           ServerXYZ
+ 
+==========================================================
+SMB2 File_Actions
+==========================================================
+ 
+	2             SMB::FILE_WRITE
+	52            SMB::FILE_READ
+	188           SMB::FILE_CLOSE
+	252           SMB::FILE_OPEN
+ 
+==========================================================
+SMB2 File_Names
+==========================================================
+ 
+	1             ui\SwDRM.dll
+	1             desktop.ini
+	1             inetpub\wwwroot\iis-85.png:Zone.Identifier
+	4             inetpub\history\CFGHISTORY_0000000004
+	4             inetpub\temp
+	4             inetpub\logs\LogFiles\W3SVC1
+	4             inetpub\history\CFGHISTORY_0000000002
+	4             inetpub\logs\LogFiles
+	4             inetpub\history
+	4             inetpub\custerr\en-US
+	4             inetpub\custerr
+	4             inetpub\temp\appPools
+	4             inetpub\history\CFGHISTORY_0000000003
+	4             inetpub\temp\IIS Temporary Compressed Files\DefaultAppPool
+	4             Thumbs.db:encryptable
+	4             inetpub\temp\IIS Temporary Compressed Files
+	4             inetpub\logs
+	4             temp
+	4             inetpub\wwwroot\Thumbs.db:encryptable
+	4             inetpub\history\CFGHISTORY_0000000001
+	4             inetpub\temp\appPools\DefaultAppPool
+	5             Users\desktop.ini
+	5             Program Files\desktop.ini
+ 
+==========================================================
+SSH Sessions
+==========================================================
+ 
+	6             x.x.x.x    -------> y.y.y.y    : 22/tcp
+	323	      x.x.x.x    -------> y.y.y.y    : 2222/tcp 	 
+
+==========================================================
+SSH Client_Strings
+==========================================================
+ 
+	6             SSH-2.0-PUTTY
+ 
+ 
+ 
+==========================================================
+SSH Server_Strings
+==========================================================
+ 
+	6             SSH-2.0-OpenSSH_7.1p2 Debian-1
+
+ 
+==========================================================
+SSH Auth_Success
+==========================================================
+ 
+	5             F
+	12	      T
+ 
+
+ 
 
   
 
