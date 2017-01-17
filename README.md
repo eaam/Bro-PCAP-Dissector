@@ -1,7 +1,7 @@
 # Bro-PCAP-Dissector
 Bro script to dissect PCAP files in a way that facilitates active threat hunting by employing stack counting techniques. The script accepts PCAP fileas an input, scans the existence of major network protocols (i.e. HTTP,DNS,SMB,RDP,SSH,SSL,FTP and IRC) and produce sorted and counted lists of interesting fields/headers upon the existence of any of the previous protocols.
 
-Running the script using this command "bro -C -r trace.pcap pcap-dissector.bro" produces the following samples output
+Running the script using this command "bro -C -r trace.pcap pcap-dissector.bro" produces the following samples (different PCAPs) output
 
 
 ==========================================================
@@ -326,5 +326,111 @@ SSL Issuers
 	33            CN=Microsoft IT SSL SHA2,OU=Microsoft IT,O=Microsoft Corporation,L=Redmond,ST=Washington,C=US
 	56            CN=Google Internet Authority G2,O=Google Inc,C=US 
 
-  
+==========================================================
+SSL Servers_Names
+==========================================================
+ 
+	1             www.youtube.com
+	2             s-static.ak.facebook.com
+	2             maps.google.com
+	2             r1---sn-aigllnek.c.2mdn.net
+	2             googleads4.g.doubleclick.net
+	2             dt.adsafeprotected.com
+	2             s.ytimg.com
+	2             gcdn.2mdn.net
+	2             stats.g.doubleclick.net
+	2             stags.bluekai.com
+
+==========================================================
+SSL Validation_Status
+==========================================================
+ 
+	15            ok
+	16            self signed certificate
+ 
+ 
+==========================================================
+RDP Sessions
+==========================================================
+ 
+	2             x.x.x.x    -------> y.y.y.y     : 3389/tcp
+	5             x.x.x.x    -------> y.y.y.y     : 3389/tcp
+	15            x.x.x.x    -------> y.y.y.y     : 3389/tcp
+
+==========================================================
+RDP Usernames
+==========================================================
+ 
+	2             Domain\Username
+	20            Domain\Username
+
+
+==========================================================
+IRC session
+==========================================================
+ 
+	3             10.240.0.3       -------> 10.240.0.2       : 31337/tcp
+	3             10.240.0.4       -------> 10.240.0.2       : 31337/tcp
+	3             10.240.0.5       -------> 10.240.0.2       : 31337/tcp
+
+
+==========================================================
+IRC username
+==========================================================
+ 
+	9             root-poppopret
+ 
+
+==========================================================
+IRC nick
+==========================================================
+
+	3             Matir
+	3             andrewg
+	3             itsl0wk3y
+
+ 
+==========================================================
+FTP Sessions
+==========================================================
+ 
+	4             x.x.x.x    -------> y.y.y.y    : 21/tcp
+
+==========================================================
+FTP Usernames
+==========================================================
+ 
+	4             admin
+
+==========================================================
+FTP Passwords
+==========================================================
+ 
+	4             <hidden>
+ 
+==========================================================
+FTP Current_Working_Directories
+==========================================================
+ 
+	1             /home
+	3             .
+
+==========================================================
+FTP Commands
+==========================================================
+ 
+	4             PORT
+
+==========================================================
+File MIME_Types
+==========================================================
+ 
+	1             application/x-dosexec                    -------> FTP_DATA
+	1             image/x-icon                             -------> HTTP
+	2             application/x-shockwave-flash            -------> HTTP
+	6             text/html                                -------> HTTP
+	9             application/x-dosexec                    -------> HTTP
+	10            text/plain                               -------> HTTP
+	13            image/png                                -------> HTTP
+
 
