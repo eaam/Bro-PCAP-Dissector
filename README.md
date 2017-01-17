@@ -7,7 +7,7 @@ Running the script using this command "bro -C -r trace.pcap pcap-dissector.bro" 
 ==========================================================
 Bytes Downloaded > {1000000 Bytes / 1 MB}
 ==========================================================
-#Format: Size, Client IP, Server IP, Server Port
+Format: Size, Client IP, Server IP, Server Port
 
     5243355          x.x.x.x   <-------  x.x.x.x  : 80/tcp
     2867458          x.x.x.x   <-------  x.x.x.x  : 443/tcp
@@ -53,6 +53,7 @@ Format: # of sessions, tcp port, server IP, protocol
 Conn Listening_TCP_Ports_on_Public_IPs
 ==========================================================
 Format: # of sessions, tcp port, server IP , protocol 
+
 	2             443/tcp   -------> -
 	5             443/tcp   -------> ssl
 	11            80/tcp    -------> http
