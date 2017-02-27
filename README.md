@@ -5,7 +5,7 @@ Running the script using this command "bro -C -r trace.pcap dissector.bro" produ
 
 
 ==========================================================
-Bytes Downloaded > {1000000 Bytes / 1 MB}
+Bytes Downloaded > {3000000 Bytes / 3 MB}
 ==========================================================
 Format: size (Descending), client IP, server IP, server port
 CTF/maccdc2012_00001.pcap
@@ -39,7 +39,7 @@ ismellpackets/Hidden.pcap
 
 
 ==========================================================
-Conn Duration > {300 Second / 5 Minutes}
+Conn Duration > {600 Second / 10 Minutes}
 ==========================================================
 Format: session duration in seconds (Descending) , client IP, server IP, server port
 
