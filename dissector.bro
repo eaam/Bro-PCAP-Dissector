@@ -418,6 +418,6 @@ if (|sort(bytes_downloaded,MyFunc_Descending)| !=0 )
 	print_vector(sort(bytes_downloaded,MyFunc_Descending),"Bytes Downloaded > {3000000 Bytes / 3 MB}");
 
 if (|sort(conn_duration,MyFunc_Descending)| !=0 )
-	print_vector(sort(conn_duration,MyFunc_Descending),"Conn Duration > {300 Second / 5 Minutes}");
+	print_vector(sort(conn_duration,MyFunc_Descending),"Conn Duration > {600 Second / 10 Minutes}");
 
 }
