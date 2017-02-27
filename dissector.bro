@@ -190,7 +190,7 @@ event Conn::log_conn(rec: Conn::Info)
 			if ( $c=rec$resp_bytes > 3000000)
 				bytes_downloaded[|bytes_downloaded|] = [$s=fmt("%-16s %s  %-16s %s %s",rec$id$orig_h,"<-------",rec$id$resp_h,":",rec$id$resp_p) ,$c=rec$resp_bytes];
 
-			if ($c=(double_to_count(interval_to_double(rec$duration)) > 300))
+			if ($c=(double_to_count(interval_to_double(rec$duration)) > 600))
 				conn_duration[|conn_duration|] = [$s=fmt("%-16s %s     %-16s %s %s",rec$id$orig_h,"<------->",rec$id$resp_h,":",rec$id$resp_p) ,$c=(double_to_count(interval_to_double(rec$duration)))];
 		
 			if (rec?$service)
