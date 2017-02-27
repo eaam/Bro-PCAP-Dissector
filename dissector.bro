@@ -216,7 +216,7 @@ event HTTP::log_http(rec: HTTP::Info)
 		if ((find_last(rec$host, /\.[a-z]+$/) !in set(".com",".net",".org")) || (|rec$host| > 30)) 
 			t_http_fields["Odd_Hosts"][|t_http_fields["Odd_Hosts"]|] = cat(rec$host);
 	
-		if ( (/\.\.|<|>|\[|\]|'|\"|\^|\|/ in rec$uri))
+		if ( rec?$uri && (/\.\.|<|>|\[|\]|'|\"|\^|\|/ in rec$uri))
 			for (h in find_all(rec$uri, /.{0,15}(\.\.|<|>|\{|\}|'|\"|\^|\|).{0,15}/))
 				t_http_fields["Odd_URIs"][|t_http_fields["Odd_URIs"]|] = fmt("%-60s %-16s %s %-16s" ,h,rec$id$orig_h," -------> ",rec$host);		
 
