@@ -43,6 +43,7 @@ Conn Duration > {600 Second / 10 Minutes}
 ==========================================================
 Format: session duration in seconds (Descending) , client IP, server IP, server port
 CTF/maccdc2012_00001.pcap
+
 	1840                  192.168.202.68   <------->     192.168.28.203   : 22/tcp
 	1788                  192.168.202.109  <------->     192.168.22.254   : 22/tcp
 	1765                  192.168.204.70   <------->     192.168.202.68   : 55554/tcp
