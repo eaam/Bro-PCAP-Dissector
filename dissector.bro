@@ -181,13 +181,13 @@ event Conn::log_conn(rec: Conn::Info)
 	if (rec$resp_pkts > 10)
 	{
 	
-		if ("h" in rec$history)
+		if (rec?$history && "h" in rec$history)
 		{
 
 			if ( $c=rec$orig_bytes > 1000000)
 				bytes_uploaded[|bytes_uploaded|] =  [$s=fmt("%-16s %s %-16s %s %s",rec$id$orig_h,"------->",rec$id$resp_h,":",rec$id$resp_p) ,$c=rec$orig_bytes];
 	
-			if ( $c=rec$resp_bytes > 1000000)
+			if ( $c=rec$resp_bytes > 3000000)
 				bytes_downloaded[|bytes_downloaded|] = [$s=fmt("%-16s %s  %-16s %s %s",rec$id$orig_h,"<-------",rec$id$resp_h,":",rec$id$resp_p) ,$c=rec$resp_bytes];
 
 			if ($c=(double_to_count(interval_to_double(rec$duration)) > 300))
@@ -212,11 +212,12 @@ event HTTP::log_http(rec: HTTP::Info)
 {
 	if (rec?$host && rec?$status_code)
 		{
-		if ((find_last(rec$host, /\.[a-z]+$/) !in set(".com","net",".org")) || (|rec$host| > 30) ||(|split_string(rec$host,/\./)|  > 6)) 
+#		if ((find_last(rec$host, /\.[a-z]+$/) !in set(".com",".net",".org")) || (|rec$host| > 30) ||(|split_string(rec$host,/\./)|  > 6)) 
+		if ((find_last(rec$host, /\.[a-z]+$/) !in set(".com",".net",".org")) || (|rec$host| > 30)) 
 			t_http_fields["Odd_Hosts"][|t_http_fields["Odd_Hosts"]|] = cat(rec$host);
 	
-		if ( (/\.\.|<|>|\[|\]|\{|\}|'|\"|\^|\\|\|/ in rec$uri))
-			for (h in find_all(rec$uri, /.{0,15}(\.\.|<|>|\[|\]|\{|\}|'|\"|\^|\\|\|).{0,15}/))
+		if ( (/\.\.|<|>|\[|\]|'|\"|\^|\|/ in rec$uri))
+			for (h in find_all(rec$uri, /.{0,15}(\.\.|<|>|\{|\}|'|\"|\^|\|).{0,15}/))
 				t_http_fields["Odd_URIs"][|t_http_fields["Odd_URIs"]|] = fmt("%-60s %-16s %s %-16s" ,h,rec$id$orig_h," -------> ",rec$host);		
 
 		if (rec?$referrer)
@@ -250,7 +251,8 @@ event DNS::log_dns(rec: DNS::Info)
 			t_dns_fields["Client_Queries"][|t_dns_fields["Client_Queries"]|] = cat(rec$id$orig_h);
 			t_dns_fields["Query_Types"][|t_dns_fields["Query_Types"]|] = cat(rec$qtype_name);			
 			
-			if ((|rec$query| > 30) || (find_last(rec$query, /\.[a-z]+$/) !in set(".com","net",".org")) || (|split_string(rec$query,/\./)|  > 6))
+#			if ((|rec$query| > 30) || (find_last(rec$query, /\.[a-z]+$/) !in set(".com",".net",".org")) || (|split_string(rec$query,/\./)|  > 6))
+			if ((|rec$query| > 30) || (find_last(rec$query, /\.[a-z]+$/) !in set(".com",".net",".org")))
 				t_dns_fields["Odd_Queries"][|t_dns_fields["Odd_Queries"]|] = cat(rec$query);
 			
 # The TTL check below was aimed at catching single flux behaviour, however, its very noisy (probably will be deleted) since almost all CDN traffic have dns answers with TTL < 30 seconds.
@@ -265,7 +267,7 @@ event DNS::log_dns(rec: DNS::Info)
 
 event smb1_message(c: connection, hdr: SMB1::Header, is_orig: bool)
 {
-if (c$smb_state?$current_file && c$smb_state$current_file?$name && (c$smb_state$current_tree$share_type == "DISK") && c$ntlm$status == "SUCCESS")
+if (c?$ntlm && c$smb_state?$current_file && c$smb_state$current_file?$name && (c$smb_state$current_tree$share_type == "DISK") && c$ntlm$status == "SUCCESS")
 	{
 	t_smb1_fields["Sessions"][|t_smb1_fields["Sessions"]|] = fmt("%-16s %s %-16s %s  %s",c$id$orig_h,"------->",c$id$resp_h,":",c$id$resp_p);
  	t_smb1_fields["File_Actions"][|t_smb1_fields["File_Actions"]|] = cat(c$smb_state$current_file$action);
@@ -280,7 +282,7 @@ if (c$smb_state?$current_file && c$smb_state$current_file?$name && (c$smb_state$
 
 event smb2_message(c: connection, hdr: SMB2::Header, is_orig: bool)
 {
-if (c$smb_state?$current_file && c$smb_state$current_file?$name && (c$smb_state$current_tree$share_type == "DISK") && c$ntlm$status == "SUCCESS")
+if (c?$ntlm && c$smb_state?$current_file && c$smb_state$current_file?$name && (c$smb_state$current_tree$share_type == "DISK") && c$ntlm$status == "SUCCESS")
 	{
 	t_smb2_fields["Sessions"][|t_smb2_fields["Sessions"]|] = fmt("%-16s %s %-16s %s  %s",c$id$orig_h,"------->",c$id$resp_h,":",c$id$resp_p);
  	t_smb2_fields["File_Actions"][|t_smb2_fields["File_Actions"]|] = cat(c$smb_state$current_file$action);
@@ -308,10 +310,18 @@ event SSL::log_ssl(rec: SSL::Info)
 {
 	if (rec?$issuer)
 		{
-		t_ssl_fields["Issuers"][|t_ssl_fields["Issuers"]|] = cat(rec$issuer);
+#		t_ssl_fields["Issuers"][|t_ssl_fields["Issuers"]|] = cat(rec$issuer);
+#		t_ssl_fields["Issuers"][|t_ssl_fields["Issuers"]|] = split_string(rec$issuer,/,/);
+		for (f in (split_string(rec$issuer,/,/)))
+			if (/CN=/ in (split_string(rec$issuer,/,/))[f])
+				{
+				t_ssl_fields["Issuers"][|t_ssl_fields["Issuers"]|] = (split_string(rec$issuer,/,/))[f];
+				break;
+				}
 		t_ssl_fields["Validation_Status"][|t_ssl_fields["Validation_Status"]|] = cat(rec$validation_status);	
 		if (rec?$server_name)
-			t_ssl_fields["Servers_Names"][|t_ssl_fields["Servers_Names"]|] = cat(rec$server_name);
+#			t_ssl_fields["Servers_Names"][|t_ssl_fields["Servers_Names"]|] = cat(rec$server_name);
+			t_ssl_fields["Servers_Names"][|t_ssl_fields["Servers_Names"]|] = find_last(rec$server_name,/\..+\..+/);
 		}
 }
 
@@ -405,10 +415,9 @@ if (|sort(bytes_uploaded,MyFunc_Descending)| !=0 )
 	print_vector(sort(bytes_uploaded,MyFunc_Descending),"Bytes Uploaded > {1000000 Bytes / 1 MB}");
 
 if (|sort(bytes_downloaded,MyFunc_Descending)| !=0 )
-	print_vector(sort(bytes_downloaded,MyFunc_Descending),"Bytes Downloaded > {1000000 Bytes / 1 MB}");
+	print_vector(sort(bytes_downloaded,MyFunc_Descending),"Bytes Downloaded > {3000000 Bytes / 3 MB}");
 
 if (|sort(conn_duration,MyFunc_Descending)| !=0 )
 	print_vector(sort(conn_duration,MyFunc_Descending),"Conn Duration > {300 Second / 5 Minutes}");
 
 }
-
