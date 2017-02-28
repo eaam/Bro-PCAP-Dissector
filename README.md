@@ -239,10 +239,11 @@ maccdc2012_00009.pcap
 HTTP Client_Requests
 ==========================================================
  Format: # of HTTP requests (Ascending), client IP
+ 2014-12-15-traffic-analysis-exercise.pcap
  
-	63            x.x.x.x
-	136           x.x.x.x
-	198           x.x.x.x
+	46            192.168.204.137
+	59            192.168.204.139
+	122           192.168.204.146
 
 ==========================================================
 DNS NXDOMAIN_Queries
