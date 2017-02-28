@@ -165,11 +165,42 @@ Format: # of occurence (Ascending), TLD part of HTTP referrer
 HTTP User-Agents
 ==========================================================
 Format: # of occuernce (Ascending), HTTP user-agent
+maccdc2012_00010.pcap
 
-	1             -
-	1             Microsoft NCSI
-	2             Microsoft-CryptoAPI/6.1
-	243           Mozilla/5.0 (Windows NT 6.1; WOW64; Trident/7.0; rv:11.0) like Gecko
+
+	1             Mozilla/5.00 (Nikto/2.1.5) (Evasions:None) (Test:000889)
+	2             Mozilla/5.00 (Nikto/2.1.5) (Evasions:None) (Test:000904)
+	2             Mozilla/5.00 (Nikto/2.1.5) (Evasions:None) (Test:000915)
+	2             Mozilla/5.00 (Nikto/2.1.5) (Evasions:None) (Test:000805)
+	2             Mozilla/5.00 (Nikto/2.1.5) (Evasions:None) (Test:000918)
+	2             Mozilla/5.00 (Nikto/2.1.5) (Evasions:None) (Test:000878)
+	2             login
+	3             Mozilla/5.00 (Nikto/2.1.5) (Evasions:None) (Test:000258)
+	4             Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Trident/4.0; SIMBAR={7DB0F6DE-8DE7-4841-9084-28FA914B0F2E}; SLCC1; .N
+	4             Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:11.0) Gecko/20100101 Firefox/11.0
+	5             Fastream NETFile Server
+	5             Mozilla/5.00 (Nikto/2.1.5) (Evasions:None) (Test:000408)
+	10            webmin
+	10            NESSUS::SOAP
+	15            Nessus SOAP v0.0.1 (Nessus.org)
+	16            Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.2 (KHTML, like Gecko) Ubuntu/11.10 Chromium/15.0.874.106 Chrome/15.0.874.106 Safari/535.2
+	16            Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/20100101 Firefox/11.0
+	17            Mozilla/5.0 (Windows NT 6.1; rv:7.0.1) Gecko/20100101 Firefox/7.0.1
+	24            Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.2.11) Gecko/20101013 Ubuntu/9.04 (jaunty) Firefox/3.6.11
+	39            Mozilla/5.0 (X11; Linux i686 on x86_64; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+	48            Mozilla/5.0 (X11; Linux i686; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+	75            Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.79 Safari/535.11
+	89            Mozilla/5.0 (X11; Linux i686; rv:5.0.1) Gecko/20100101 Firefox/5.0.1
+	96            Nessus
+	199           Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+	281           Mozilla/5.0 (Windows NT 6.1; WOW64; rv:10.0.2) Gecko/20100101 Firefox/10.0.2
+	405           Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)
+	649           Mozilla/5.0 (compatible; Nmap Scripting Engine; http://nmap.org/book/nse.html)
+	1369          Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0)
+	6341          -
+	8081          Mozilla/4.0 (compatible; MSIE 9.0; Windows NT 6.1)
+	17520         Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0)
+	481029        DirBuster-0.12 (http://www.owasp.org/index.php/Category:OWASP_DirBuster_Project)
 
 
 ==========================================================
