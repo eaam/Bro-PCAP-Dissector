@@ -223,14 +223,17 @@ maccdc2012_00006.pcap
 HTTP Response_Codes
 ==========================================================
 Format: # of occurence (Ascending), HTTP response status code 
+maccdc2012_00009.pcap
 
-	1             307
-	2             403
-	6             404
-	6             204
-	6             301
-	44            302
-	232           200
+	1             SEARCH
+	2             PROPFIND
+	4             TRACE
+	53            PUT
+	118           DELETE
+	488           OPTIONS
+	624           POST
+	21154         GET
+	392084        HEAD
  
 ==========================================================
 HTTP Client_Requests
