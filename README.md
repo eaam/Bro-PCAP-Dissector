@@ -112,15 +112,16 @@ Format: # of sessions (Ascending), tcp port, protocol
 HTTP Odd_Hosts
 ==========================================================
 Format: # of occurence (Ascending), odd HTTP hosts
+2016-05-13-traffic-analysis-exercise.pcap
 
-	1             whos.amung.us
-	1             widgets.amung.us
-	1             a.topgunn.photography
+ 
 	1             magusserver.top
+	1             a.topgunn.photography
+	1             widgets.amung.us
+	1             whos.amung.us
 	1             ckea.ca
-	2             g00.co
 	2             x.ss2.us
-	2             www.postagens.net
+	2             g00.co
 	3             mohecy.tk
 	4             185.82.202.170
 	6             ululataque-forstbea.bondcroftatvs.co.uk
@@ -129,54 +130,35 @@ Format: # of occurence (Ascending), odd HTTP hosts
 	23            5.34.183.40
 
 
-==========================================================
-HTTP Odd_URIs
-==========================================================
-Format: # of occurence (Ascending), odd URIs (20 chars before and after the matched pattern)
-
-	1             an =    Iniciar{133}  Downlaod                                         x.x.x.x       ------->  www.devyatinskiy.ru
-	1             )|utmcmd=organic|                                                      x.x.x.x       ------->  www.google-analytics.com
-	1             an =    Iniciar{69}                                                    x.x.x.x       ------->  www.devyatinskiy.ru
-	1             ta Pasta === C:\Users\Matthew.F                                        x.x.x.x       ------->  www.devyatinskiy.ru
-	1             =    Continuou ... extrair                                             x.x.x.x       ------->  www.devyatinskiy.ru
-	1             ks /create /tn "SYSFROGGYPC37"                                         x.x.x.x       ------->  api.devyatinskiy.ru
-	1             in A. Abbott | Lit2Go ETC&utm                                          x.x.x.x       ------->  www.google-analytics.com
-	1             " /F                                                                   x.x.x.x       ------->  api.devyatinskiy.ru
-	1             =render_toolbox|5196&cmenu=null                                        x.x.x.x       ------->  m.addthis.com   
-	1             jpd2buu.3sx.vbs" /sc onlogon /R                                        x.x.x.x       ------->  api.devyatinskiy.ru
-	1             n =     Iniciar{121} - Download                                        x.x.x.x       ------->  www.devyatinskiy.ru
-	1             an =    Iniciar{90}                                                    x.x.x.x       ------->  www.devyatinskiy.ru
-	1             40/bibi/dll.dll|P5PKLOY+IYtRWfZ                                        x.x.x.x       ------->  www.devyatinskiy.ru
-	1             n|4530|817,sh|4534|5,sh|4537|                                          x.x.x.x       ------->  m.addthis.com   
-	1             0,700,400italic|Josefin+Slab:40                                        x.x.x.x       ------->  fonts.googleapis.com
-	1             t[1329]                                                                x.x.x.x       ------->  api.devyatinskiy.ru
-	1             index.php?N=a37[7]FROGGY-PC-Mat                                        x.x.x.x       ------->  api.devyatinskiy.ru
-	1             /tr "C:\Windows\SysWOW64\Java\m                                        x.x.x.x       ------->  api.devyatinskiy.ru
-	1             240/bibi/W7.zip|38|http://65.18                                        x.x.x.x       ------->  www.devyatinskiy.ru
-	1                Pasta === C:\Users\Matthew.F                                        x.x.x.x       ------->  www.devyatinskiy.ru
-	2             [?] Operating syst                                                     x.x.x.x       ------->  www.devyatinskiy.ru
-	2               |  _|\x0d                                                            x.x.x.x       ------->  www.devyatinskiy.ru
-	2             \Ionic.Zip.Reduc                                                       x.x.x.x       ------->  www.devyatinskiy.ru
-	2               |_  |\x0d                                                            x.x.x.x       ------->  www.devyatinskiy.ru
-	2             [!] No valid threa                                                     x.x.x.x       ------->  www.devyatinskiy.ru
-	2             hLogonW handles..\x0d                                                  x.x.x.x       ------->  www.devyatinskiy.ru
-	2             \x09|     |_  |_| |_| . |___| | |_                                     x.x.x.x       ------->  www.devyatinskiy.ru
-	2             \x09|  V  |  _|_  | |  _|___|   |_                                     x.x.x.x       ------->  www.devyatinskiy.ru
-	2             rogman\AppData\Local\Temp\Java                                         x.x.x.x       ------->  www.devyatinskiy.ru
 
 ==========================================================
 HTTP Referrers
 ==========================================================
 Format: # of occurence (Ascending), TLD part of HTTP referrer
+2016-03-30-traffic-analysis-exercise.pcap
 
-	1             www.google.com.au
-	2             uacltr.securetopc.top
-	15            3wzn5p2yiumh7akj.waytopaytosystem.com
-	27            -
-	51            www.outdoorsamoa.com
-	54            au.search.yahoo.com
-	56            www.koeppl.com
-	86            planetside.co.uk
+	1             ztjyuncjqvi1e.com
+	1             www.ecb.europa.eu
+	2             www.google.com
+	2             leadback.advertising.com
+	2             folesd.tk
+	2             scoring33.com
+	2             lemepackrougue.com
+	3             wincepromotional.com
+	3             rmfytrwemvvk.com
+	3             fireman.carsassurance.info
+	4             9e886e6c4bf39d002b00-b32e53c17e846b593b21b014f11dc266.r14.cf2.rackcdn.com
+	4             8def3da737b3b1117f05-2484ec98d956dd65605480d10636de6f.r11.cf1.rackcdn.com
+	6             score.feed-xml.com
+	8             trafficinside.me
+	9             fast.twc.demdex.net
+	10            popcash.net
+	16            ip.casalemedia.com
+	21            cmap.uac.ace.advertising.com
+	23            xxxsexcamera.club
+	29            -
+	63            thingstodo.viator.com
+	83            webmail.roadrunner.com
 
  
 ==========================================================
