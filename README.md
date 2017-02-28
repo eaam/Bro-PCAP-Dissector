@@ -65,19 +65,47 @@ CTF/maccdc2012_00001.pcap
 Conn Listening_TCP_Ports_on_Private_IPs
 ==========================================================
 Format: # of sessions (Ascending), tcp port, server IP, protocol
+CTF/maccdc2012_00003.pcap
 
-	1             80/tcp    listening on  x.x.x.x         http
- 
- 
+	1             8089/tcp  listening on  192.168.22.253   ssl
+	1             8000/tcp  listening on  192.168.25.253   http
+	1             5432/tcp  listening on  192.168.203.45   -
+	1             139/tcp   listening on  192.168.25.102   ntlm,gssapi,smb,dce_rpc
+	1             22/tcp    listening on  192.168.28.203   ssh
+	1             22/tcp    listening on  192.168.21.254   ssh
+	1             445/tcp   listening on  192.168.27.100   ntlm,smb,dce_rpc
+	1             80/tcp    listening on  192.168.22.253   http
+	1             445/tcp   listening on  192.168.25.102   ntlm,gssapi,smb,dce_rpc
+	1             80/tcp    listening on  192.168.21.202   http
+	1             443/tcp   listening on  192.168.201.2    ssl
+	1             8080/tcp  listening on  192.168.23.203   http
+	1             80/tcp    listening on  192.168.28.101   http
+	2             55553/tcp listening on  192.168.202.68   ssl
+	2             80/tcp    listening on  192.168.23.101   http
+	2             80/tcp    listening on  192.168.25.202   http
+	3             22/tcp    listening on  192.168.23.101   ssh
+	4             445/tcp   listening on  192.168.27.100   ntlm,smb
+	4             80/tcp    listening on  192.168.25.102   http
+	5             443/tcp   listening on  192.168.25.253   ssl
+	5             443/tcp   listening on  192.168.22.253   ssl
+	7             443/tcp   listening on  192.168.22.254   ssl
+	13            80/tcp    listening on  192.168.202.78   http
+	17            443/tcp   listening on  192.168.25.254   ssl
+	18            22/tcp    listening on  192.168.22.253   ssh
+
+
  
 ==========================================================
 Conn Listening_TCP_Ports_on_Public_IPs
 ==========================================================
 Format: # of sessions (Ascending), tcp port, protocol 
+2015-06-30-traffic-analysis-exercise.pcap
 
-	2             443/tcp   -------> -
-	5             443/tcp   -------> ssl
-	11            80/tcp    -------> http
+	1             6998/tcp  -------> -
+	3             80/tcp    -------> http
+	9             443/tcp   -------> ssl
+
+
  
 
 ==========================================================
