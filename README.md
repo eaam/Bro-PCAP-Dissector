@@ -207,9 +207,17 @@ maccdc2012_00010.pcap
 HTTP Methods
 ==========================================================
 Format: # of occurence (Ascending), HTTP request method 
+maccdc2012_00006.pcap
  
-	9             POST
-	274           GET
+	1             SEARCH
+	2             PROPFIND
+	3             OPTIONS
+	3             DESCRIBE
+	42            PUT
+	76            DELETE
+	76            HEAD
+	16896         GET
+	42856         POST
 
 ==========================================================
 HTTP Response_Codes
