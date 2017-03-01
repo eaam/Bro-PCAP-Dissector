@@ -249,62 +249,74 @@ HTTP Client_Requests
 DNS NXDOMAIN_Queries
 ==========================================================
 Format: # of queries to NX domains (Ascending), client IP
+maccdc2012_00003.pcap
 
-	2             x.x.x.x
-	3             x.x.x.x
-	21            x.x.x.x
+	1             192.168.202.76
+	1             192.168.202.92
+	1             192.168.202.85
+	1             192.168.202.102
+	1             192.168.202.112
+	2             192.168.203.63
+	2             192.168.202.115
+	3             192.168.204.60
+	4             192.168.203.61
+	7             192.168.202.75
+	9             192.168.202.83
+	10            192.168.202.100
+	12            192.168.202.108
+	14            192.168.202.94
+	17            192.168.202.77
+	28            192.168.202.103
+	141           192.168.204.70
  
  ==========================================================
 DNS Client_Queries
 ==========================================================
 Format: # of DNS queries (Ascending), client IP
+maccdc2012_00001.pcap
 
-	23            192.168.122.52
-	32            192.168.122.130
-	32            192.168.122.132
+	1             192.168.202.77
+	1             fe80::223:dfff:fe97:4e12
+	1             192.168.22.152
+	1             192.168.21.152
+	1             fe80::c62c:3ff:fe37:efc
+	1             192.168.28.152
+	2             fe80::ba8d:12ff:fe53:a8d8
+	2             192.168.28.103
+	2             192.168.26.152
+	3             192.168.202.94
+	4             192.168.202.71
+	5             192.168.202.110
+	13            fe80::3e07:54ff:fe1c:a665
+	25            192.168.202.102
+	31            192.168.202.115
+	108           192.168.204.45
  
 ==========================================================
 DNS Query_Types
 ==========================================================
 Format: # of occurence (Ascending), DNS query type
+maccdc2012_00006.pcap
 
-	1             TXT
-	2             AAAA
-	4             PTR
-	7             *
-	99            A 
+	8             *
+	10            PTR
+	16            A
+	99            AXFR
+ 
  
 ==========================================================
 DNS Odd_Queries
 ==========================================================
 Format: # of occurence (Ascending), odd DNS query
+2015-05-08-traffic-analysis-exercise.pcap
 
-	1             zt.1rx.io
-	1             sync.1rx.io
-	1             ccjlwb22w6c22p2k.onion.to
-	1             bapanivato.abjibapanichhatedi.org
-	1             cm.g.doubleclick.net
-	1             x.bidswitch.net
-	1             ubb67.3c147o.u806a4.w07d919.o5f.f1.b80w.r0faf9.e8mfzdgrf7g0.groupprograms.in
 	1             runlove.us
 	1             r03afd2.c3008e.xc07r.b0f.a39.h7f0fa5eu.vb8fbl.e8mfzdgrf7g0.groupprograms.in
-	1             kritischerkonsum.uni-koeln.de
 	1             7oqnsnzwwnm6zb7y.gigapaysun.com
 	1             ip-addr.es
+	1             ubb67.3c147o.u806a4.w07d919.o5f.f1.b80w.r0faf9.e8mfzdgrf7g0.groupprograms.in
 	1             va872g.g90e1h.b8.642b63u.j985a2.v33e.37.pa269cc.e8mfzdgrf7g0.groupprograms.in
-	1             i.w55c.net
-	1             wme0hsxg.e6to8jdmiysycbmeepm29nfprvigdwev.top
-	1             ffoqr3ug7m726zou.le2brr.bid
-	1             bid.g.doubleclick.net
-	1             um.simpli.fi
-	2             googleads.g.doubleclick.net
-	2             connexity.net
-	2             px.owneriq.net
-	1             stats.g.doubleclick.net
-	1             7c416cff040b7449328d095b3e98e12d5f12a207.googledrive.com
-	1             cl.ly
-	1             connect.facebook.net 
-	2             api.devyatinskiy.ru 
+	1             kritischerkonsum.uni-koeln.de
 
 ==========================================================
 SMB2 Sessions
