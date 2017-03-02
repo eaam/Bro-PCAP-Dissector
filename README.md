@@ -385,15 +385,29 @@ Format: # of occurence (Ascending), SMB file name
 SSH Sessions
 ==========================================================
 Format: # of occurence (Ascending), client ip, server ip, server port
+maccdc2012_00003.pcap
 
-	6             x.x.x.x    -------> y.y.y.y    : 22/tcp
-	2             x.x.x.x    -------> y.y.y.y    : 2222/tcp	
+	1             192.168.202.109  -------> 192.168.21.254   : 22/tcp
+	1             192.168.202.87   -------> 192.168.28.203   : 22/tcp
+	1             192.168.202.110  -------> 192.168.22.254   : 22/tcp
+	1             192.168.202.96   -------> 192.168.25.202   : 22/tcp
+	1             192.168.202.96   -------> 192.168.25.102   : 22/tcp
+	3             192.168.202.112  -------> 192.168.23.101   : 22/tcp
+	28            192.168.202.110  -------> 192.168.22.253   : 22/tcp
 ==========================================================
 SSH Client_Strings
 ==========================================================
 Format: # of occurence (Ascending), SSH client string
+maccdc2012_00007.pcap
 
-	6             SSH-2.0-PUTTY
+	1             
+	4             SSH-2.0-OpenSSH_5.2
+	6             SSH-1.5-Nmap-SSH1-Hostkey
+	6             SSH-1.5-NmapNSE_1.0
+	11            SSH-2.0-OpenSSH_5.3p1 Debian-3ubuntu7
+	12            SSH-2.0-Nmap-SSH2-Hostkey
+	14            SSH-2.0-OpenSSH_5.3p1 Debian-3ubuntu6
+	30            SSH-2.0-OpenSSH_5.0
  
  
  
@@ -401,43 +415,47 @@ Format: # of occurence (Ascending), SSH client string
 SSH Server_Strings
 ==========================================================
 Format: # of occurence (Ascending), SSH server string
+maccdc2012_00003.pcap
 
-	6             SSH-2.0-OpenSSH_7.1p2 Debian-1
+	2             SSH-1.99-Cisco-1.25
+	3             SSH-2.0-OpenSSH_5.8p1 Debian-1ubuntu3
+	3             SSH-2.0-OpenSSH_5.8p1 Debian-7ubuntu1
+	28            SSH-2.0-OpenSSH_4.5
 
- 
 ==========================================================
 SSH Auth_Success
 ==========================================================
 Format: # of occurence (Ascending), SSH auth_success result (True/False)
+maccdc2012_00008.pcap
 
-	5             F
-	7             T
+	17            T
+	73            F
+ 
 
 ==========================================================
 SSL Servers_Names
 ==========================================================
 Format: # of occurence (Ascending), SSL server name
+2016-09-20-traffic-analysis-exercise.pcap
 
-	1             nexusrules.officeapps.live.com
-	1             licensing.mp.microsoft.com
-	1             sqm.telemetry.microsoft.com
-	1             iecvlist.microsoft.com
-	1             nexus.officeapps.live.com
-	2             v10.vortex-win.data.microsoft.com
-	4             f5xraa2y2ybtrefz.tor2web.org
+
+	2             .live.com
+	4             .tor2web.org
+	5             .microsoft.com
+
  
 ==========================================================
 SSL Issuers
 ==========================================================
 Format: # of occurence (Ascending), SSL issuer
+maccdc2012_00003.pcap
  
-	1             emailAddress=sampo@iki.fi,CN=brutus.neuronio.pt,OU=Desenvolvimento,O=Neuronio\, Lda.,L=Lisboa,ST=Queensland,C=PT
-	2             CN=4Tw88SdvHNKgZH3boHtKG4HL,O=Q31367JVj8IhD4FmHMwKPhUV,L=PVji8090PTSZMEYq0XlXrYzn,ST=ST,C=CN
-	8             CN=Verizon Akamai SureServer CA G14-SHA2,OU=Cybertrust,O=Verizon Enterprise Solutions,L=Amsterdam,C=NL
-	14            CN=COMODO RSA Domain Validation Secure Server CA,O=COMODO CA Limited,L=Salford,ST=Greater Manchester,C=GB
-	18            CN=457jPxEfw8rSShbih3y7p6D3,O=E3LrXvD3rrL8AjBQ9HpYhfAK,L=MdoCgaSQxzrPq5p367Y1Ksjo,ST=ST,C=CN
-	33            CN=Microsoft IT SSL SHA2,OU=Microsoft IT,O=Microsoft Corporation,L=Redmond,ST=Washington,C=US
-	56            CN=Google Internet Authority G2,O=Google Inc,C=US 
+	1             CN=3uat.zwdt0km.yeh.bsoj.umbg.net
+	1             CN=Scorebot
+	7             CN=192.168.22.254
+	18            CN=192.168.25.254
+	58            CN=SplunkCommonCA
+	1180          CN=localhost.localdomain
 
 
 
@@ -445,6 +463,7 @@ Format: # of occurence (Ascending), SSL issuer
 SSL Validation_Status
 ==========================================================
 Format: # of occurence (Ascending), SSL cert validation result
+2015-10-28-traffic-analysis-exercise.pcap
 
 	15            ok
 	16            self signed certificate
