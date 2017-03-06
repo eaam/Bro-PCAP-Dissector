@@ -9,7 +9,7 @@ Bytes Downloaded > {3000000 Bytes / 3 MB}
 ==========================================================
 Format: size (Descending), client IP, server IP, server port
 </br>
-Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00001.pcap @ http://bit.ly/2msqi0U
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00001.pcap @ http://bit.ly/2mWr0kx
 
 	5366941               192.168.203.64   <-------  192.168.202.68   : 55554/tcp
 	5184633               192.168.204.70   <-------  192.168.202.68   : 55554/tcp
@@ -45,7 +45,8 @@ Results from: ismellpackets/Hidden.pcap @ http://bit.ly/2lSdxt8
 Conn Duration > {600 Second / 10 Minutes}
 ==========================================================
 Format: session duration in seconds (Descending) , client IP, server IP, server port
-CTF/maccdc2012_00001.pcap
+</br>
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00001.pcap @ http://bit.ly/2maxlsD
 
 	1840                  192.168.202.68   <------->     192.168.28.203   : 22/tcp
 	1788                  192.168.202.109  <------->     192.168.22.254   : 22/tcp
@@ -68,7 +69,8 @@ CTF/maccdc2012_00001.pcap
 Conn Listening_TCP_Ports_on_Private_IPs
 ==========================================================
 Format: # of sessions (Ascending), tcp port, server IP, protocol
-CTF/maccdc2012_00003.pcap
+</br>
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00003.pcap @ http://bit.ly/2maxlsD
 
 	1             8089/tcp  listening on  192.168.22.253   ssl
 	1             8000/tcp  listening on  192.168.25.253   http
@@ -102,7 +104,8 @@ CTF/maccdc2012_00003.pcap
 Conn Listening_TCP_Ports_on_Public_IPs
 ==========================================================
 Format: # of sessions (Ascending), tcp port, protocol 
-2015-06-30-traffic-analysis-exercise.pcap
+</br>
+Results from: Malware Traffic Analysis / 2015-06-30-traffic-analysis-exercise.pcap @ http://bit.ly/2lSbbdH
 
 	1             6998/tcp  -------> -
 	3             80/tcp    -------> http
@@ -115,7 +118,8 @@ Format: # of sessions (Ascending), tcp port, protocol
 HTTP Odd_Hosts
 ==========================================================
 Format: # of occurence (Ascending), odd HTTP hosts
-2016-05-13-traffic-analysis-exercise.pcap
+</br>
+Results from: Malware Traffic Analysis / 2016-05-13-traffic-analysis-exercise.pcap @ http://bit.ly/2mvlhVA
 
  
 	1             magusserver.top
@@ -138,7 +142,9 @@ Format: # of occurence (Ascending), odd HTTP hosts
 HTTP Referrers
 ==========================================================
 Format: # of occurence (Ascending), TLD part of HTTP referrer
-2016-03-30-traffic-analysis-exercise.pcap
+</br>
+Results from: Malware Traffic Analysis / 2016-03-30-traffic-analysis-exercise.pcap @ http://bit.ly/2mLFlDN
+
 
 	1             ztjyuncjqvi1e.com
 	1             www.ecb.europa.eu
@@ -168,7 +174,9 @@ Format: # of occurence (Ascending), TLD part of HTTP referrer
 HTTP User-Agents
 ==========================================================
 Format: # of occuernce (Ascending), HTTP user-agent
-maccdc2012_00010.pcap
+</br>
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00010.pcap @ http://bit.ly/2maxlsD
+
 
 
 	1             Mozilla/5.00 (Nikto/2.1.5) (Evasions:None) (Test:000889)
@@ -210,7 +218,8 @@ maccdc2012_00010.pcap
 HTTP Methods
 ==========================================================
 Format: # of occurence (Ascending), HTTP request method 
-maccdc2012_00006.pcap
+</br>
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00006.pcap @ http://bit.ly/2maxlsD
  
 	1             SEARCH
 	2             PROPFIND
@@ -226,7 +235,9 @@ maccdc2012_00006.pcap
 HTTP Response_Codes
 ==========================================================
 Format: # of occurence (Ascending), HTTP response status code 
-maccdc2012_00009.pcap
+</br>
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00009.pcap @ http://bit.ly/2maxlsD
+
 
 	1             SEARCH
 	2             PROPFIND
@@ -242,7 +253,9 @@ maccdc2012_00009.pcap
 HTTP Client_Requests
 ==========================================================
  Format: # of HTTP requests (Ascending), client IP
- 2014-12-15-traffic-analysis-exercise.pcap
+</br>
+Results from: Malware Traffic Analysis /  2014-12-15-traffic-analysis-exercise.pcap @ http://bit.ly/2lNMcYi
+ 
  
 	46            192.168.204.137
 	59            192.168.204.139
@@ -252,7 +265,9 @@ HTTP Client_Requests
 DNS NXDOMAIN_Queries
 ==========================================================
 Format: # of queries to NX domains (Ascending), client IP
-maccdc2012_00003.pcap
+</br>
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00003.pcap @ http://bit.ly/2maxlsD
+
 
 	1             192.168.202.76
 	1             192.168.202.92
@@ -276,7 +291,8 @@ maccdc2012_00003.pcap
 DNS Client_Queries
 ==========================================================
 Format: # of DNS queries (Ascending), client IP
-maccdc2012_00001.pcap
+</br>
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition /maccdc2012_00001.pcap @ http://bit.ly/2maxlsD
 
 	1             192.168.202.77
 	1             fe80::223:dfff:fe97:4e12
@@ -299,7 +315,8 @@ maccdc2012_00001.pcap
 DNS Query_Types
 ==========================================================
 Format: # of occurence (Ascending), DNS query type
-maccdc2012_00006.pcap
+</br>
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition /maccdc2012_00006.pcap @ http://bit.ly/2maxlsD
 
 	8             *
 	10            PTR
@@ -311,7 +328,8 @@ maccdc2012_00006.pcap
 DNS Odd_Queries
 ==========================================================
 Format: # of occurence (Ascending), odd DNS query
-2015-05-08-traffic-analysis-exercise.pcap
+</br>
+Results from: Malware Traffic Analysis / 2015-05-08-traffic-analysis-exercise.pcap @ http://bit.ly/2lS8g4L
 
 	1             runlove.us
 	1             r03afd2.c3008e.xc07r.b0f.a39.h7f0fa5eu.vb8fbl.e8mfzdgrf7g0.groupprograms.in
