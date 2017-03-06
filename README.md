@@ -406,7 +406,8 @@ Format: # of occurence (Ascending), SMB file name
 SSH Sessions
 ==========================================================
 Format: # of occurence (Ascending), client ip, server ip, server port
-maccdc2012_00003.pcap
+</br>
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00003.pcap @ http://bit.ly/2maxlsD
 
 	1             192.168.202.109  -------> 192.168.21.254   : 22/tcp
 	1             192.168.202.87   -------> 192.168.28.203   : 22/tcp
@@ -419,7 +420,8 @@ maccdc2012_00003.pcap
 SSH Client_Strings
 ==========================================================
 Format: # of occurence (Ascending), SSH client string
-maccdc2012_00007.pcap
+</br>
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00007.pcap @ http://bit.ly/2maxlsD
 
 	1             
 	4             SSH-2.0-OpenSSH_5.2
@@ -436,7 +438,9 @@ maccdc2012_00007.pcap
 SSH Server_Strings
 ==========================================================
 Format: # of occurence (Ascending), SSH server string
-maccdc2012_00003.pcap
+</br>
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00003.pcap @ http://bit.ly/2maxlsD
+
 
 	2             SSH-1.99-Cisco-1.25
 	3             SSH-2.0-OpenSSH_5.8p1 Debian-1ubuntu3
@@ -447,7 +451,8 @@ maccdc2012_00003.pcap
 SSH Auth_Success
 ==========================================================
 Format: # of occurence (Ascending), SSH auth_success result (True/False)
-maccdc2012_00008.pcap
+</br>
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00008.pcap @ http://bit.ly/2maxlsD
 
 	17            T
 	73            F
@@ -457,7 +462,9 @@ maccdc2012_00008.pcap
 SSL Servers_Names
 ==========================================================
 Format: # of occurence (Ascending), SSL server name
-2016-09-20-traffic-analysis-exercise.pcap
+</br>
+Results from: Malware Traffic Analysis / 2016-09-20-traffic-analysis-exercise.pcap @ http://bit.ly/2lS8g4L
+
 
 
 	2             .live.com
@@ -469,7 +476,9 @@ Format: # of occurence (Ascending), SSL server name
 SSL Issuers
 ==========================================================
 Format: # of occurence (Ascending), SSL issuer
-maccdc2012_00003.pcap
+</br>
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00003.pcap @ http://bit.ly/2maxlsD
+
  
 	1             CN=3uat.zwdt0km.yeh.bsoj.umbg.net
 	1             CN=Scorebot
@@ -484,7 +493,8 @@ maccdc2012_00003.pcap
 SSL Validation_Status
 ==========================================================
 Format: # of occurence (Ascending), SSL cert validation result
-2015-10-28-traffic-analysis-exercise.pcap
+</br>
+Results from: Malware Traffic Analysis / 2015-10-28-traffic-analysis-exercise.pcap @ http://bit.ly/2lS8g4L
 
 	15            ok
 	16            self signed certificate
@@ -541,6 +551,7 @@ FTP Sessions
 ==========================================================
 Format: # of occurence (Ascending), client IP, Server IP, server port
 Day1.pcap
+
 	4             192.168.100.28   -------> 192.18.99.122    : 21/tcp
 	10            192.168.100.28   -------> 62.211.66.16     : 21/tcp
 
@@ -549,6 +560,7 @@ FTP Usernames
 ==========================================================
 Format: # of occurence (Ascending), FTP username
 Day1.pcap
+
 	4             anonymous
 	10            bobzz
 
@@ -558,6 +570,7 @@ FTP Current_Working_Directories
 ==========================================================
 Format: # of occurence (Ascending), FTP Current Working Directory
 Day1.pcap
+
 	4             ./pub/patches
 	10            .
 
@@ -566,6 +579,7 @@ FTP Commands
 ==========================================================
 Format: # of occurence (Ascending), FTP command
 Day1.pcap
+
 	5             PORT
 	9             RETR
 
@@ -573,7 +587,8 @@ Day1.pcap
 File MIME_Types
 ==========================================================
 Format: # of occurence (Ascending), mime type, communication protocol
-maccdc2012_00002.pcap
+</br>
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00002.pcap @ http://bit.ly/2maxlsD
 
 	1             application/x-shockwave-flash            -------> HTTP
 	2             image/x-ms-bmp                           -------> HTTP
