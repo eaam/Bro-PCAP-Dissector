@@ -552,13 +552,21 @@ Day1.pcap
 File MIME_Types
 ==========================================================
 Format: # of occurence (Ascending), mime type, communication protocol
+maccdc2012_00002.pcap
 
-	1             application/x-dosexec                    -------> FTP_DATA
-	1             image/x-icon                             -------> HTTP
-	2             application/x-shockwave-flash            -------> HTTP
-	6             text/html                                -------> HTTP
+	1             application/x-shockwave-flash            -------> HTTP
+	2             image/x-ms-bmp                           -------> HTTP
+	2             application/x-dosexec                    -------> SMB
+	8             application/xml                          -------> HTTP
 	9             application/x-dosexec                    -------> HTTP
-	10            text/plain                               -------> HTTP
-	13            image/png                                -------> HTTP
+	13            text/x-php                               -------> HTTP
+	14            image/x-icon                             -------> HTTP
+	70            image/gif                                -------> HTTP
+	95            image/png                                -------> HTTP
+	250           application/pkix-cert                    -------> SSL
+	315           text/json                                -------> HTTP
+	765           text/plain                               -------> FTP_DATA
+	1145          text/plain                               -------> HTTP
+	2023          text/html                                -------> HTTP
 
 
