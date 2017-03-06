@@ -10,7 +10,7 @@ Bytes Downloaded > {3000000 Bytes / 3 MB}
 Format: size (Descending), client IP, server IP, server port
 </br>
 Results from: https://download.netresec.com/pcap/maccdc-2012/maccdc2012_00001.pcap
-</br>
+
 	5366941               192.168.203.64   <-------  192.168.202.68   : 55554/tcp
 	5184633               192.168.204.70   <-------  192.168.202.68   : 55554/tcp
 	4203410               192.168.204.45   <-------  192.168.202.68   : 55554/tcp
