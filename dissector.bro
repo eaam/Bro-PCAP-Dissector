@@ -29,7 +29,6 @@ global t_http_fields: table[string] of vector of string =
 ["Odd_Hosts"] = vector(),
 ["Methods"] = vector(),
 ["Referrers"] = vector(),
-["Odd_URIs"] = vector(),
 ["Response_Codes"] = vector(),
 ["User-Agents"] = vector(),
 ["Client_Requests"] = vector(),
@@ -49,6 +48,7 @@ global t_smb1_fields: table[string] of vector of string =
 {
 ["File_Actions"] = vector(),
 ["File_Names"] = vector(),
+["Domains"] = vector(),
 ["Usernames"] = vector(),
 ["Hostnames"] = vector(),
 ["Sessions"] = vector(),
@@ -58,6 +58,7 @@ global t_smb2_fields: table[string] of vector of string =
 {
 ["File_Actions"] = vector(),
 ["File_Names"] = vector(),
+["Domains"] = vector(),
 ["Usernames"] = vector(),
 ["Hostnames"] = vector(),
 ["Sessions"] = vector(),
@@ -94,7 +95,6 @@ global t_irc_fields: table[string] of vector of string =
 global t_ftp_fields: table[string] of vector of string = 
 {
 ["Usernames"] = vector(),
-["Passwords"] = vector(),
 ["Commands"] = vector(),
 ["Current_Working_Directories"] = vector(),
 ["Sessions"] = vector(),
@@ -213,12 +213,9 @@ event HTTP::log_http(rec: HTTP::Info)
 	if (rec?$host && rec?$status_code)
 		{
 #		if ((find_last(rec$host, /\.[a-z]+$/) !in set(".com",".net",".org")) || (|rec$host| > 30) ||(|split_string(rec$host,/\./)|  > 6)) 
-		if ((find_last(rec$host, /\.[a-z]+$/) !in set(".com",".net",".org")) || (|rec$host| > 30)) 
-			t_http_fields["Odd_Hosts"][|t_http_fields["Odd_Hosts"]|] = cat(rec$host);
+#		if ((find_last(rec$host, /\.[a-z]+$/) !in set(".com",".net",".org")) || (|rec$host| > 30)) 
+#			t_http_fields["Odd_Hosts"][|t_http_fields["Odd_Hosts"]|] = cat(rec$host);
 	
-		if ( rec?$uri && (/\.\.|<|>|\[|\]|'|\"|\^|\|/ in rec$uri))
-			for (h in find_all(rec$uri, /.{0,15}(\.\.|<|>|\{|\}|'|\"|\^|\|).{0,15}/))
-				t_http_fields["Odd_URIs"][|t_http_fields["Odd_URIs"]|] = fmt("%-60s %-16s %s %-16s" ,h,rec$id$orig_h," -------> ",rec$host);		
 
 		if (rec?$referrer)
  			t_http_fields["Referrers"][|t_http_fields["Referrers"]|] = split_string(rec$referrer,/\//)[2];
@@ -246,7 +243,7 @@ event DNS::log_dns(rec: DNS::Info)
 		if (rec$rcode == 3)
 			t_dns_fields["NXDOMAIN_Queries"][|t_dns_fields["NXDOMAIN_Queries"]|] = cat(rec$id$orig_h);
 
-		if (rec$rcode == 0)
+		if (rec$rcode == 0 && rec$qtype_name != "NBSTAT")
 		{
 			t_dns_fields["Client_Queries"][|t_dns_fields["Client_Queries"]|] = cat(rec$id$orig_h);
 			t_dns_fields["Query_Types"][|t_dns_fields["Query_Types"]|] = cat(rec$qtype_name);			
@@ -267,13 +264,17 @@ event DNS::log_dns(rec: DNS::Info)
 
 event smb1_message(c: connection, hdr: SMB1::Header, is_orig: bool)
 {
-if (c?$ntlm && c$smb_state?$current_file && c$smb_state$current_file?$name && (c$smb_state$current_tree$share_type == "DISK") && c$ntlm$status == "SUCCESS")
+if (c?$ntlm && c$smb_state?$current_file && c$smb_state$current_file?$name && (c$smb_state$current_tree$share_type == "DISK") && (c$ntlm?$status && c$ntlm$status == "SUCCESS"))
 	{
 	t_smb1_fields["Sessions"][|t_smb1_fields["Sessions"]|] = fmt("%-16s %s %-16s %s  %s",c$id$orig_h,"------->",c$id$resp_h,":",c$id$resp_p);
  	t_smb1_fields["File_Actions"][|t_smb1_fields["File_Actions"]|] = cat(c$smb_state$current_file$action);
 	t_smb1_fields["File_Names"][|t_smb1_fields["File_Names"]|] = cat(c$smb_state$current_file$name);
-	t_smb1_fields["Usernames"][|t_smb1_fields["Usernames"]|] = fmt("%-20s %-10s %s",c$ntlm$domainname,"\\",c$ntlm$username );
-	t_smb1_fields["Hostnames"][|t_smb1_fields["Hostnames"]|] = cat(c$ntlm$hostname);
+	if (c$ntlm?$domainname)
+		t_smb1_fields["Domains"][|t_smb1_fields["Domains"]|] = cat(c$ntlm$domainname);
+	if (c$ntlm?$username)
+		t_smb1_fields["Usernames"][|t_smb1_fields["Usernames"]|] = cat(c$ntlm$username);
+	if(c$ntlm?$hostname)	
+		t_smb1_fields["Hostnames"][|t_smb1_fields["Hostnames"]|] = cat(c$ntlm$hostname);
 	}	
 }
 
@@ -287,8 +288,13 @@ if (c?$ntlm && c$smb_state?$current_file && c$smb_state$current_file?$name && (c
 	t_smb2_fields["Sessions"][|t_smb2_fields["Sessions"]|] = fmt("%-16s %s %-16s %s  %s",c$id$orig_h,"------->",c$id$resp_h,":",c$id$resp_p);
  	t_smb2_fields["File_Actions"][|t_smb2_fields["File_Actions"]|] = cat(c$smb_state$current_file$action);
 	t_smb2_fields["File_Names"][|t_smb2_fields["File_Names"]|] = cat(c$smb_state$current_file$name);
-	t_smb2_fields["Usernames"][|t_smb2_fields["Usernames"]|] = fmt("%-20s %-10s %s",c$ntlm$domainname,"\\",c$ntlm$username );
-	t_smb2_fields["Hostnames"][|t_smb2_fields["Hostnames"]|] = cat(c$ntlm$hostname);		
+	
+	if (c$ntlm?$domainname && c$ntlm?$username)
+		t_smb2_fields["Usernames"][|t_smb2_fields["Usernames"]|] = fmt("%-20s %-10s %s",c$ntlm$domainname,"\\",c$ntlm$username );
+	else	
+		t_smb2_fields["Usernames"][|t_smb2_fields["Usernames"]|] = fmt("%-20s",c$ntlm$username );
+	if(c$ntlm?$hostname)	
+		t_smb2_fields["Hostnames"][|t_smb2_fields["Hostnames"]|] = cat(c$ntlm$hostname);		
 	}
 }
 
@@ -299,7 +305,8 @@ event SSH::log_ssh(rec: SSH::Info)
 		{
 		t_ssh_fields["Sessions"][|t_ssh_fields["Sessions"]|] = fmt("%-16s %s %-16s %s %s",rec$id$orig_h,"------->",rec$id$resp_h,":",rec$id$resp_p);
 		t_ssh_fields["Server_Strings"][|t_ssh_fields["Server_Strings"]|] = cat(rec$server);
-		t_ssh_fields["Client_Strings"][|t_ssh_fields["Client_Strings"]|] = cat(rec$client);
+		if (rec?$client)
+			t_ssh_fields["Client_Strings"][|t_ssh_fields["Client_Strings"]|] = cat(rec$client);
 		if (rec?$auth_success)
 			t_ssh_fields["Auth_Success"][|t_ssh_fields["Auth_Success"]|] = cat(rec$auth_success);
 		}
@@ -337,7 +344,8 @@ event IRC::irc_log(rec: IRC::Info)
 {
 	t_irc_fields["session"][|t_irc_fields["session"]|] = fmt("%-16s %s %-16s %s %s",rec$id$orig_h,"------->",rec$id$resp_h,":",rec$id$resp_p);
 	t_irc_fields["username"][|t_irc_fields["username"]|] = cat(rec$user);
-	t_irc_fields["nick"][|t_irc_fields["nick"]|] = cat(rec$nick);
+	if (rec?$nick)	
+		t_irc_fields["nick"][|t_irc_fields["nick"]|] = cat(rec$nick);
 }
 
 
@@ -348,11 +356,8 @@ event FTP::log_ftp(rec: FTP::Info)
 	t_ftp_fields["Commands"][|t_ftp_fields["Commands"]|] = cat(rec$command);
 	t_ftp_fields["Current_Working_Directories"][|t_ftp_fields["Current_Working_Directories"]|] = cat(rec$cwd);
 	t_ftp_fields["Sessions"][|t_ftp_fields["Sessions"]|] = fmt("%-16s %s %-16s %s %s",rec$id$orig_h,"------->",rec$id$resp_h,":",rec$id$resp_p);
-	if (rec?$password)
-	{
+	if (rec?$user)
 		t_ftp_fields["Usernames"][|t_ftp_fields["Usernames"]|] = cat(rec$user);
-		t_ftp_fields["Passwords"][|t_ftp_fields["Passwords"]|] = cat(rec$password);		
-	}
 
 }
 
