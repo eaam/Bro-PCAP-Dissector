@@ -9,7 +9,7 @@ Bytes Downloaded > {3000000 Bytes / 3 MB}
 ==========================================================
 Format: size (Descending), client IP, server IP, server port
 </br>
-Results from: https://download.netresec.com/pcap/maccdc-2012/maccdc2012_00001.pcap
+Results from: National CyberWatch Mid-Atlantic Collegiate Cyber Defense Competition / maccdc2012_00001.pcap @ http://bit.ly/2msqi0U
 
 	5366941               192.168.203.64   <-------  192.168.202.68   : 55554/tcp
 	5184633               192.168.204.70   <-------  192.168.202.68   : 55554/tcp
@@ -26,7 +26,9 @@ Results from: https://download.netresec.com/pcap/maccdc-2012/maccdc2012_00001.pc
 Bytes Uploaded > {1000000 Bytes / 1 MB}
 ==========================================================
 Format: size (Descending), client IP, server IP, server port
-ismellpackets/Hidden.pcap
+</br>
+Results from: ismellpackets/Hidden.pcap @ http://bit.ly/2lSdxt8
+
 
 	1510081441            192.168.4.5      -------> 207.171.185.200  : 443/tcp
 	1436668500            192.168.4.5      -------> 74.125.239.3     : 443/tcp
