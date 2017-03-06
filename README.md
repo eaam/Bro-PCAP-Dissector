@@ -491,11 +491,11 @@ Format: # of occurence (Ascending), domain \ username
 IRC session
 ==========================================================
 Format: # of occurence (Ascending), client IP, server IP, server port
+Day1.pcap
 
-	3             10.240.0.3       -------> 10.240.0.2       : 31337/tcp
-	3             10.240.0.4       -------> 10.240.0.2       : 31337/tcp
-	3             10.240.0.5       -------> 10.240.0.2       : 31337/tcp
-
+	7             80.117.14.44     -------> 192.168.100.28   : 7000/tcp
+	12            192.168.100.28   -------> 206.252.192.195  : 6667/tcp
+	192           192.168.100.28   -------> 206.252.192.195  : 5555/tcp
 
 ==========================================================
 IRC username
@@ -519,37 +519,34 @@ Format: # of occurence (Ascending), IRC nickname
 FTP Sessions
 ==========================================================
 Format: # of occurence (Ascending), client IP, Server IP, server port
-
-	4             x.x.x.x    -------> y.y.y.y    : 21/tcp
+Day1.pcap
+	4             192.168.100.28   -------> 192.18.99.122    : 21/tcp
+	10            192.168.100.28   -------> 62.211.66.16     : 21/tcp
 
 ==========================================================
 FTP Usernames
 ==========================================================
 Format: # of occurence (Ascending), FTP username
+Day1.pcap
+	4             anonymous
+	10            bobzz
 
-	4             admin
-
-==========================================================
-FTP Passwords
-==========================================================
-Format: # of occurence (Ascending), FTP passwords
-
-	4             <hidden>
  
 ==========================================================
 FTP Current_Working_Directories
 ==========================================================
 Format: # of occurence (Ascending), FTP Current Working Directory
-
-	1             /home
-	3             .
+Day1.pcap
+	4             ./pub/patches
+	10            .
 
 ==========================================================
 FTP Commands
 ==========================================================
 Format: # of occurence (Ascending), FTP command
-
-	4             PORT
+Day1.pcap
+	5             PORT
+	9             RETR
 
 ==========================================================
 File MIME_Types
