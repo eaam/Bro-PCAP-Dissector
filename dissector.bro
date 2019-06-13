@@ -1,4 +1,4 @@
-@load policy/protocols/smb
+@load base/protocols/smb
 @load policy/protocols/ssl/validate-certs.bro 
 
 
@@ -264,7 +264,7 @@ event DNS::log_dns(rec: DNS::Info)
 
 event smb1_message(c: connection, hdr: SMB1::Header, is_orig: bool)
 {
-if (c?$ntlm && c$smb_state?$current_file && c$smb_state$current_file?$name && (c$smb_state$current_tree$share_type == "DISK") && (c$ntlm?$status && c$ntlm$status == "SUCCESS"))
+if (c?$ntlm && c$smb_state?$current_file && c$smb_state$current_file?$name && (c$smb_state$current_tree$share_type == "DISK") && c$ntlm?$success)
 	{
 	t_smb1_fields["Sessions"][|t_smb1_fields["Sessions"]|] = fmt("%-16s %s %-16s %s  %s",c$id$orig_h,"------->",c$id$resp_h,":",c$id$resp_p);
  	t_smb1_fields["File_Actions"][|t_smb1_fields["File_Actions"]|] = cat(c$smb_state$current_file$action);
@@ -283,7 +283,7 @@ if (c?$ntlm && c$smb_state?$current_file && c$smb_state$current_file?$name && (c
 
 event smb2_message(c: connection, hdr: SMB2::Header, is_orig: bool)
 {
-if (c?$ntlm && c$smb_state?$current_file && c$smb_state$current_file?$name && (c$smb_state$current_tree$share_type == "DISK") && c$ntlm$status == "SUCCESS")
+if (c?$ntlm && c$smb_state?$current_file && c$smb_state$current_file?$name && (c$smb_state$current_tree$share_type == "DISK") && c$ntlm$success)
 	{
 	t_smb2_fields["Sessions"][|t_smb2_fields["Sessions"]|] = fmt("%-16s %s %-16s %s  %s",c$id$orig_h,"------->",c$id$resp_h,":",c$id$resp_p);
  	t_smb2_fields["File_Actions"][|t_smb2_fields["File_Actions"]|] = cat(c$smb_state$current_file$action);
